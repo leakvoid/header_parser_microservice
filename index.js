@@ -18,9 +18,9 @@ app.get('/', function (req, res) {
     var agent = useragent.parse(req.headers["user-agent"]);
     console.log("OS: " + agent.os.toString());
 
-    res.json({"IP_address: ": ip,
-	     "Language: ": language,
-	     "OS: ": agent.os.toString()});
+    res.json({"IP_address": ip,
+	     "Language": language,
+	     "OS": agent.os.toString()});
 });
 
 app.listen(port, function() {
