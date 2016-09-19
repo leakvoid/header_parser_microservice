@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 	req.connection.socket.remoteAddress;
     console.log("IP_address: " + ip);
 
-    var language = req.headers["accept-language"];
+    var language = req.headers["accept-language"].match(/(.*),/)[1];
     console.log("Language: " + language);
 
     var agent = useragent.parse(req.headers["user-agent"]);
